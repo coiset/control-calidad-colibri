@@ -151,10 +151,10 @@ class CashRegisterCSharpStrategy(CanalEstrategiaInterface):
                     "monto": monto_retiro
                 }
             
-            res_withdraw = ServidorCentralFacade.enviar_al_servidor_cpp("CR_OFI_CENTRAL", "C# / .NET", withdraw_payload)
-            if res_withdraw["autorizado"]:
-                print("\n🎉 [Interfaz 4 - SALIDA] ¡SUCCESSES!!! Entregar efectivo al socio.")
-                print("🧾 [DIAN] Imprimiendo comprobante fiscal de retiro de intereses.")
+                res_withdraw = ServidorCentralFacade.enviar_al_servidor_cpp("CR_OFI_CENTRAL", "C# / .NET", withdraw_payload)
+                if res_withdraw["autorizado"]:
+                    print("\n🎉 [Interfaz 4 - SALIDA] ¡SUCCESSES!!! Entregar efectivo al socio.")
+                    print("🧾 [DIAN] Imprimiendo comprobante fiscal de retiro de intereses.")
 
 
 class PortalWebJSStrategy(CanalEstrategiaInterface):
