@@ -121,10 +121,10 @@ if len(pass_cr) != 8:
             print("❌ C# Object Error: Auth failed.")
             return
             
-        # [Interfaz 2] Recaudo / Depósito de Inversionistas
-        print("\n[Interfaz 2] ENTER CASHIER CODE!")
-        cashier = input("CASHIER CODE: ")
-        monto_deposito = int(input("DEPOSIT MONEY (Aporte de Inversionista): $"))
+            # [Interfaz 2] Recaudo / Depósito de Inversionistas
+            print("\n[Interfaz 2] ENTER CASHIER CODE!")
+            cashier = input("CASHIER CODE: ")
+            monto_deposito = int(input("DEPOSIT MONEY (Aporte de Inversionista): $"))
         
         payload_cs = {
             "canal": "CashRegister",
