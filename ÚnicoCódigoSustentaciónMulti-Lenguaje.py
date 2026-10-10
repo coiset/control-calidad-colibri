@@ -117,39 +117,39 @@ class CashRegisterCSharpStrategy(CanalEstrategiaInterface):
         print("[Interfaz 1] PASSWORD LOGIN!")
         pass_cr = input("PASSWORD (8 caracteres): ")
         
-if len(pass_cr) != 8:
-            print("❌ C# Object Error: Auth failed.")
-            return
-            
-            # [Interfaz 2] Recaudo / Depósito de Inversionistas
-            print("\n[Interfaz 2] ENTER CASHIER CODE!")
-            cashier = input("CASHIER CODE: ")
-            monto_deposito = int(input("DEPOSIT MONEY (Aporte de Inversionista): $"))
-        
-            payload_cs = {
-                "canal": "CashRegister",
-                "operacion": "recaudo_oficina",
-                "cajero_id": cashier,
-                "monto": monto_deposito
-            }
-            
-            res = ServidorCentralFacade.enviar_al_servidor_cpp("CR_OFI_CENTRAL", "C# / .NET", payload_cs)
-            if res["autorizado"]:
-                print("\n🎉 [Interfaz 3] ¡THANK YOU!!!")
-                print("🧾 [DIAN] Enviando comando a Impresora Fiscal Homologada en Colombia.")
+    if len(pass_cr) != 8:
+                print("❌ C# Object Error: Auth failed.")
+                return
                 
-            # [Interfaz 4] Retiro de Intereses de Socios (Withdraw Money)
-            print("\n[Interfaz 4] WITHDRAW SECTION (Retiro de Intereses de Socios)!")
-            cedula_socio = input("ENTER INVESTOR ID (Cédula del socio): ")
-            monto_retiro = int(input("WITHDRAW MONEY (Monto de retiro de intereses): $"))
+                # [Interfaz 2] Recaudo / Depósito de Inversionistas
+                print("\n[Interfaz 2] ENTER CASHIER CODE!")
+                cashier = input("CASHIER CODE: ")
+                monto_deposito = int(input("DEPOSIT MONEY (Aporte de Inversionista): $"))
             
-            withdraw_payload = {
-                "canal": "CashRegister",
-                "operacion": "retiro_intereses_oficina",
-                "cajero_id": cashier,
-                "cedula_socio": cedula_socio,
-                "monto": monto_retiro
-            }
+                payload_cs = {
+                    "canal": "CashRegister",
+                    "operacion": "recaudo_oficina",
+                    "cajero_id": cashier,
+                    "monto": monto_deposito
+                }
+                
+                res = ServidorCentralFacade.enviar_al_servidor_cpp("CR_OFI_CENTRAL", "C# / .NET", payload_cs)
+                if res["autorizado"]:
+                    print("\n🎉 [Interfaz 3] ¡THANK YOU!!!")
+                    print("🧾 [DIAN] Enviando comando a Impresora Fiscal Homologada en Colombia.")
+                    
+                # [Interfaz 4] Retiro de Intereses de Socios (Withdraw Money)
+                print("\n[Interfaz 4] WITHDRAW SECTION (Retiro de Intereses de Socios)!")
+                cedula_socio = input("ENTER INVESTOR ID (Cédula del socio): ")
+                monto_retiro = int(input("WITHDRAW MONEY (Monto de retiro de intereses): $"))
+                
+                withdraw_payload = {
+                    "canal": "CashRegister",
+                    "operacion": "retiro_intereses_oficina",
+                    "cajero_id": cashier,
+                    "cedula_socio": cedula_socio,
+                    "monto": monto_retiro
+                }
             
             res_withdraw = ServidorCentralFacade.enviar_al_servidor_cpp("CR_OFI_CENTRAL", "C# / .NET", withdraw_payload)
             if res_withdraw["autorizado"]:
