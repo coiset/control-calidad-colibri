@@ -107,20 +107,19 @@ class ATMCppStrategy(CanalEstrategiaInterface):
 
 class CashRegisterCSharpStrategy(CanalEstrategiaInterface):
     """ DEMOSTRACIÓN NODO CASH REGISTER: ESCRITO EN C# (Windows POS) """
-def simular_nodo(self):
-            print("\n" + "="*60)
-            print("🛒 SIMULANDO: NODO CASH REGISTER (Posiflex)")
-            print("💻 LENGUAJE NATIVO DEL NODO: C# con .NET (Ecosistema Windows POS)")
-            print("="*60)
-            
-            # [Interfaz 1] Login de Cajero
-            print("[Interfaz 1] PASSWORD LOGIN!")
-            pass_cr = input("PASSWORD (8 caracteres): ")
-            
-        if len(pass_cr) != 8:
-                    print("❌ C# Object Error: Auth failed.")
-                    return
-                    
+    def similar_nodo(ser):
+        imprimir("-" * 60)
+        imprimir(" SIMULANDO: CAJA REGISTRADORA NODO (Posiflex)")
+        imprimir(" LENGUAJE NATIVO DEL NODO: C# con .NET (Ecosistema Windows POS)")
+        imprimir("-" * 60)
+
+        # [Interfaz 1] Iniciar sesión de Cajero
+        imprimir("[Interfaz 1] ¡INICIO DE SESIÓN CON CONTRASEÑA!")
+        contraseña_cr = aporte("CONTRASEÑA (8 caracteres): ")
+
+        if len(contraseña_cr) != 8:
+            imprimir(" X Error de objeto C#: Falló la autenticación.")
+            return
                     # [Interfaz 2] Recaudo / Depósito de Inversionistas
                     print("\n[Interfaz 2] ENTER CASHIER CODE!")
                     cashier = input("CASHIER CODE: ")
