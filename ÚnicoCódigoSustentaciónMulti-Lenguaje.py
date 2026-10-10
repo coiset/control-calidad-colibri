@@ -135,9 +135,9 @@ if len(pass_cr) != 8:
             
             res = ServidorCentralFacade.enviar_al_servidor_cpp("CR_OFI_CENTRAL", "C# / .NET", payload_cs)
             if res["autorizado"]:
-            print("\n🎉 [Interfaz 3] ¡THANK YOU!!!")
-            print("🧾 [DIAN] Enviando comando a Impresora Fiscal Homologada en Colombia.")
-            
+                print("\n🎉 [Interfaz 3] ¡THANK YOU!!!")
+                print("🧾 [DIAN] Enviando comando a Impresora Fiscal Homologada en Colombia.")
+                
             # [Interfaz 4] Retiro de Intereses de Socios (Withdraw Money)
             print("\n[Interfaz 4] WITHDRAW SECTION (Retiro de Intereses de Socios)!")
             cedula_socio = input("ENTER INVESTOR ID (Cédula del socio): ")
