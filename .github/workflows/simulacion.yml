@@ -1,0 +1,33 @@
+name: Simulación y Validación Automatizada
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validar-sistema:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Descargar el código del repositorio en la máquina virtual
+    - name: Descargando código
+      uses: actions/checkout@v4
+
+    # 2. Configurar el entorno de Python
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    # 3. Simular la ejecución del script de sustentación en Python
+    - name: Simular Sustentación Multi-Lenguaje
+      run: |
+        python "ÚnicoCódigoSustentaciónMulti-Lenguaje.py"
+
+    # 4. Simular la compilación y ejecución del motor en C++
+    - name: Simular Compilación del Motor C++
+      run: |
+        g++ -O2 Motor_deLogica_yJSON.cpp -o motor_logica
+        ./motor_logica
