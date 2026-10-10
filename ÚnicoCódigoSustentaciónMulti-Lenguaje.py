@@ -126,15 +126,15 @@ if len(pass_cr) != 8:
             cashier = input("CASHIER CODE: ")
             monto_deposito = int(input("DEPOSIT MONEY (Aporte de Inversionista): $"))
         
-        payload_cs = {
-            "canal": "CashRegister",
-            "operacion": "recaudo_oficina",
-            "cajero_id": cashier,
-            "monto": monto_deposito
-        }
-        
-        res = ServidorCentralFacade.enviar_al_servidor_cpp("CR_OFI_CENTRAL", "C# / .NET", payload_cs)
-        if res["autorizado"]:
+            payload_cs = {
+                "canal": "CashRegister",
+                "operacion": "recaudo_oficina",
+                "cajero_id": cashier,
+                "monto": monto_deposito
+            }
+            
+            res = ServidorCentralFacade.enviar_al_servidor_cpp("CR_OFI_CENTRAL", "C# / .NET", payload_cs)
+            if res["autorizado"]:
             print("\n🎉 [Interfaz 3] ¡THANK YOU!!!")
             print("🧾 [DIAN] Enviando comando a Impresora Fiscal Homologada en Colombia.")
             
